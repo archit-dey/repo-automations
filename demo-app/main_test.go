@@ -91,21 +91,3 @@ func TestFactorial(t *testing.T) {
 		})
 	}
 }
-
-func BenchmarkAdd(b *testing.B) {
-	for i := 0; i < b.N; i++ {
-		Add(100, 200)
-	}
-}
-
-func BenchmarkMultiply(b *testing.B) {
-	for i := 0; i < b.N; i++ {
-		Multiply(100, 200)
-	}
-}
-
-func BenchmarkFactorial(b *testing.B) {
-	for i := 0; i < b.N; i++ {
-		Factorial(10)
-	}
-}
