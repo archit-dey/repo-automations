@@ -14,9 +14,6 @@ test:
 run: build
 	./$(BUILD_DIR)/$(PROJECT_NAME)
 
-bench:
-	cd $(PROJECT_NAME) && go test -bench=. -benchmem
-
 fmt:
 	cd $(PROJECT_NAME) && go fmt ./...
 
