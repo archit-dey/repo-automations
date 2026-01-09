@@ -23,9 +23,26 @@ jobs:
             REPO: ${{ github.repository }}
             PR NUMBER: ${{ github.event.pull_request.number }}
 
-            Please review this pull request with a focus on:
-            - Code quality and best practices
-            - Potential bugs or issues
+            Review this PR against our team checklist:
+
+            ## Code Quality
+            - [ ] Code follows our style guide
+            - [ ] No commented-out code
+            - [ ] Meaningful variable names
+            - [ ] DRY principle followed
+
+            ## Testing
+            - [ ] Unit tests for new functions
+            - [ ] Edge cases covered
+
+            ## Documentation
+            - [ ] README updated if needed
+            - [ ] Inline comments for complex logic
+
+            ## Security
+            - [ ] No hardcoded credentials
+            - [ ] Input validation implemented
+            - [ ] Proper error handling
 
             Provide:
             1. A summary comment on the PR with overall findings
