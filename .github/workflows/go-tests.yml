@@ -24,11 +24,10 @@ jobs:
         env:
           CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
         run: |
-          # 1. Download the reporter
           curl -Ls https://coverage.codacy.com/get.sh > codacy-reporter.sh
           chmod +x codacy-reporter.sh
           
-          # 2. Run the reporter with the mandatory Go flag
           ./codacy-reporter.sh report \
             --force-coverage-parser go \
+            -t "$CODACY_PROJECT_TOKEN" \
             -r results.out

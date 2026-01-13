@@ -9,7 +9,7 @@ build:
 	cd $(PROJECT_NAME) && go build -o ../$(BUILD_DIR)/$(PROJECT_NAME) .
 
 test:
-	cd $(PROJECT_NAME) && go test -v -coverprofile=results.out ./...
+	cd $(PROJECT_NAME) && go test -v -coverprofile=../results.out ./...
 
 run: build
 	./$(BUILD_DIR)/$(PROJECT_NAME)
