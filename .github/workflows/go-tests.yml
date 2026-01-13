@@ -19,3 +19,15 @@ jobs:
 
       - name: Run tests
         run: make test
+
+      - name: Upload Coverage to Codacy
+        env:
+          CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
+        run: |
+          curl -Ls https://coverage.codacy.com/get.sh > codacy-reporter.sh
+          chmod +x codacy-reporter.sh
+          
+          ./codacy-reporter.sh report \
+            --force-coverage-parser go \
+            -t "$CODACY_PROJECT_TOKEN" \
+            -r results.out
