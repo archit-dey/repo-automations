@@ -1,0 +1,23 @@
+---
+# Define files to ignore from quality analysis (e.g., generated code)
+exclude_paths:
+  - "**/*_test.go" 
+  - "**/mocks/**"
+
+engines:
+  # Revive is the primary linter for Go in Codacy
+  revive:
+    enabled: true
+  
+  # Duplication settings for Go
+  duplication:
+    enabled: true
+    config:
+      languages:
+        - "go"
+    # Go defaults to 40 tokens; lower this if you want stricter detection
+    minTokenMatch: 40 
+
+languages:
+  go:
+    enabled: true
