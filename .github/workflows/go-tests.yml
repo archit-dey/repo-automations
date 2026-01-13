@@ -11,8 +11,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
 
       - name: Set up Go
         uses: actions/setup-go@v5
@@ -22,6 +23,7 @@ jobs:
       - name: Run tests
         run: make test
 
+      # --- UPLOAD TO Codacy ---
       - name: Upload Coverage to Codacy
         env:
           CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
@@ -33,3 +35,14 @@ jobs:
             --force-coverage-parser go \
             -t "$CODACY_PROJECT_TOKEN" \
             -r results.out
+      
+      # --- UPLOAD TO DEEPSOURCE ---
+      - name: Report results to DeepSource
+        run: |
+          # 1. Install CLI
+          curl https://deepsource.com/cli | sh
+          
+          # 2. Report coverage
+          ./bin/deepsource report --analyzer test-coverage --key go --value-file ./cover.out
+        env:
+          DEEPSOURCE_DSN: ${{ secrets.DEEPSOURCE_DSN }}

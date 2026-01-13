@@ -1,0 +1,30 @@
+version = 1
+
+[[analyzers]]
+name = "go"
+enabled = true
+
+[analyzers.meta]
+# 1. Address Cyclomatic Complexity
+# Setting this to 10-15 is industry standard. 
+# Functions higher than this will trigger a quality issue.
+max_cyclomatic_complexity = 10 
+
+# 2. Set Go version for accurate analysis
+import_path = "github.com/your-username/your-repo"
+go_version = "1.25"
+
+[[analyzers]]
+name = "test-coverage"
+enabled = true
+
+# 3. Optional: Add security & secrets scanning
+[[analyzers]]
+name = "secrets"
+enabled = true
+
+# 4. Exclude generated code or vendor files from complexity checks
+exclude_patterns = [
+    "**/*_test.go",
+    "**/generated_*.go"
+]
