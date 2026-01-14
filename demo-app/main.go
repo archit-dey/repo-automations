@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"os"
 	"strconv"
+
+	"github.com/archit-dey/repo-automations/internal/demo"
 )
 
 func main() {
@@ -11,21 +13,21 @@ func main() {
 	display()
 
 	// Demonstrate math operations
-	result := Add(10, 20)
+	result := demo.Add(10, 20)
 	fmt.Printf("Addition: 10 + 20 = %d\n", result)
 
-	result = Multiply(5, 6)
+	result = demo.Multiply(5, 6)
 	fmt.Printf("Multiplication: 5 * 6 = %d\n", result)
 
 	// Demonstrate string operations
-	greeting := Greet("World")
+	greeting := demo.Greet("World")
 	fmt.Println(greeting)
 
 	// Demonstrate factorial calculation
 	if len(os.Args) > 1 {
 		n, err := strconv.Atoi(os.Args[1])
 		if err == nil && n >= 0 {
-			fact := Factorial(n)
+			fact := demo.Factorial(n)
 			fmt.Printf("Factorial of %d = %d\n", n, fact)
 		}
 	}

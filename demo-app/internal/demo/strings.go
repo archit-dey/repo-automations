@@ -1,4 +1,4 @@
-package main
+package demo
 
 import (
 	"fmt"
@@ -7,7 +7,7 @@ import (
 
 // Greet returns a greeting message
 func Greet(name string) string {
-	return fmt.Sprintf("Hello, %s! Welcome to the app.", name)
+	return fmt.Sprintf("Hello, %s! Welcome to the demo app.", name)
 }
 
 // CountWords counts the occurrences of each word in a text

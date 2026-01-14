@@ -1,4 +1,4 @@
-package main
+package demo
 
 // Shape interface demonstrates interfaces in Go
 type Shape interface {
