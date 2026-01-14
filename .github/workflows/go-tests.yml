@@ -22,6 +22,12 @@ jobs:
 
       - name: Run tests
         run: make test
+      
+      - name: Upload results to Codecov
+        uses: codecov/codecov-action@v5
+        with:
+          files: ./results.out
+          token: ${{ secrets.CODECOV_TOKEN }}
 
       # --- UPLOAD TO Codacy ---
       - name: Upload Coverage to Codacy
