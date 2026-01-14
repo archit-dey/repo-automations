@@ -1,8 +1,7 @@
 version = 1
 
 [[analyzers]]
-name = "test-coverage"
-enabled = true
+name = "go"
 
   [analyzers.meta]
   import_root = "github.com/archit-dey/repo-automations"
