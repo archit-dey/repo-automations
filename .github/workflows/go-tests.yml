@@ -43,6 +43,6 @@ jobs:
           curl https://deepsource.com/cli | sh
           
           # 2. Report coverage
-          ./bin/deepsource report --analyzer go --key go --value-file ./results.out
+          ./bin/deepsource report --analyzer test-coverage --key go --value-file ./results.out
         env:
           DEEPSOURCE_DSN: ${{ secrets.DEEPSOURCE_DSN }}
