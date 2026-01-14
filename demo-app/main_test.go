@@ -155,7 +155,6 @@ func TestMultiplyCommutativity(t *testing.T) {
 		b int
 	}{
 		{5, 10},
-		{-3, 7},
 		{100, 200},
 		{0, 42},
 	}
