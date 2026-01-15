@@ -1,4 +1,4 @@
-package main
+package demo
 
 // FilterEven filters a slice to return only even numbers
 func FilterEven(numbers []int) []int {

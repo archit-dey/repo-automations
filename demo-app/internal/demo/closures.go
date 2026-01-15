@@ -1,4 +1,4 @@
-package main
+package demo
 
 // Counter returns a closure that increments and returns a counter
 func Counter() func() int {

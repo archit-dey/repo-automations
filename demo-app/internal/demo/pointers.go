@@ -1,4 +1,4 @@
-package main
+package demo
 
 // Swap exchanges the values of two integers using pointers
 func Swap(a, b *int) {
