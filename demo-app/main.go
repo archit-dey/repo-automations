@@ -5,7 +5,7 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/archit-dey/repo-automations/internal/demo"
+	"github.com/archit-dey/repo-automations/demo-app/internal/demo"
 )
 
 func main() {
