@@ -23,6 +23,13 @@ jobs:
       - name: Run tests
         run: make test
       
+      # --- UPLOAD TO Sonarcube ---
+      - name: SonarQube Scan
+        uses: SonarSource/sonarqube-scan-action@v6
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      
+      # --- UPLOAD TO Codecov ---
       - name: Upload results to Codecov
         uses: codecov/codecov-action@v5
         with:
