@@ -13,8 +13,8 @@ func main() {
 	display()
 
 	// Demonstrate math operations
-	result := demo.Add(10, 20)
-	fmt.Printf("Addition: 10 + 20 = %d\n", result)
+	result := demo.Add(10, 30)
+	fmt.Printf("Addition: 10 + 30 = %d\n", result)
 
 	result = demo.Multiply(5, 6)
 	fmt.Printf("Multiplication: 5 * 6 = %d\n", result)
