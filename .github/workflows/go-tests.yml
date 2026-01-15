@@ -34,9 +34,8 @@ jobs:
       - name: Upload results to Codecov
         uses: codecov/codecov-action@v5
         with:
-          files: ../results.out
+          files: demo-app/results.out
           token: ${{ secrets.CODECOV_TOKEN }}
-          working-directory: ./demo-app
 
       # --- UPLOAD TO Codacy ---
       - name: Upload Coverage to Codacy
@@ -49,7 +48,7 @@ jobs:
           ./codacy-reporter.sh report \
             --force-coverage-parser go \
             -t "$CODACY_PROJECT_TOKEN" \
-            -r results.out
+            -r demo-app/results.out
       
       # --- UPLOAD TO DEEPSOURCE ---
       - name: Report results to DeepSource
@@ -58,6 +57,6 @@ jobs:
           curl https://deepsource.com/cli | sh
           
           # 2. Report coverage
-          ./bin/deepsource report --analyzer test-coverage --key go --value-file ./results.out
+          ./bin/deepsource report --analyzer test-coverage --key go --value-file ./demo-app/results.out
         env:
           DEEPSOURCE_DSN: ${{ secrets.DEEPSOURCE_DSN }}
